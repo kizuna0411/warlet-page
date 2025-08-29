@@ -1,0 +1,965 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700"
+    />
+
+    <title>われっと - 割り勘計算アプリ</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0iIzNkNTQ3ZiIvPgo8dGV4dCB4PSIxNiIgeT0iMjAiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWkiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7jgY88L3RleHQ+Cjwvc3ZnPgo="
+    />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-white justify-between group/design-root overflow-x-hidden"
+      style="
+        font-family: &quot;Spline Sans&quot;, &quot;Noto Sans&quot;, sans-serif;
+      "
+    >
+      <div>
+        <div class="flex items-center bg-[#3d547f] p-4 pb-2 justify-between">
+          <h2
+            class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-left"
+          >
+            われっと
+          </h2>
+          <nav class="hidden md:flex items-center gap-6">
+            <a
+              href="index.html"
+              class="text-white text-sm font-medium hover:text-[#8B9DC3] transition-colors"
+            >
+              ホーム
+            </a>
+            <a
+              href="tech-stack.html"
+              class="text-white text-sm font-medium hover:text-[#8B9DC3] transition-colors"
+            >
+              技術スタック
+            </a>
+            <a
+              href="https://apps.apple.com/us/app/%E3%82%8F%E3%82%8C%E3%81%A3%E3%81%A8/id6744440089"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-white text-base font-bold leading-normal tracking-[0.015em] bg-[#8B9DC3] px-4 py-2 rounded-lg hover:bg-[#7a8bb5] transition-colors"
+            >
+              ダウンロード
+            </a>
+          </nav>
+          <!-- Mobile menu button -->
+          <div class="md:hidden flex items-center gap-2">
+            <a
+              href="tech-stack.html"
+              class="text-white text-sm font-medium hover:text-[#8B9DC3] transition-colors"
+            >
+              技術スタック
+            </a>
+            <a
+              href="https://apps.apple.com/us/app/%E3%82%8F%E3%82%8C%E3%81%A3%E3%81%A8/id6744440089"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-white text-sm font-bold leading-normal tracking-[0.015em] bg-[#8B9DC3] px-3 py-1.5 rounded-lg hover:bg-[#7a8bb5] transition-colors"
+            >
+              DL
+            </a>
+          </div>
+        </div>
+        <div class="w-full">
+          <div class="p-2 md:p-4">
+            <div
+              class="flex min-h-[400px] md:min-h-[480px] flex-col gap-6 md:gap-8 bg-cover bg-center bg-no-repeat rounded-lg md:rounded-xl items-center justify-center p-6 md:p-8"
+              style="
+                background-image:
+                  linear-gradient(
+                    rgba(0, 0, 0, 0.6) 0%,
+                    rgba(0, 0, 0, 0.8) 100%
+                  ),
+                  url(&quot;https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80&quot;);
+              "
+            >
+              <div class="flex flex-col gap-4 text-center max-w-4xl mx-auto">
+                <h1
+                  class="text-white text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-[-0.033em]"
+                >
+                  割り勘をもっとシンプルに
+                </h1>
+                <h2
+                  class="text-white text-sm md:text-base lg:text-lg font-normal leading-relaxed px-4"
+                >
+                  「われっと」は、複数人でのイベント参加時の支払い記録と精算を効率化するモバイルアプリです。<br class="hidden md:block" />
+                  友人との飲み会、旅行、サークル活動などでの複雑な割り勘計算を自動化し、<br class="hidden md:block" />
+                  誰がいくら支払うべきか、誰が受け取るべきかを明確にします。
+                </h2>
+              </div>
+              <a
+                href="https://apps.apple.com/us/app/%E3%82%8F%E3%82%8C%E3%81%A3%E3%81%A8/id6744440089"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex min-w-[120px] max-w-[320px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 md:h-14 px-6 md:px-8 bg-gradient-to-r from-[#3d547f] to-[#5a6fa3] hover:from-[#2a3d63] hover:to-[#3d547f] text-white text-base md:text-lg font-bold leading-normal tracking-[0.015em] transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg shadow-md"
+              >
+                <span class="truncate">今すぐダウンロード</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="px-4 py-8">
+          <h2
+            class="text-[#3d547f] text-[22px] font-bold leading-tight tracking-[-0.015em] pb-6 text-center"
+          >
+            主な機能
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            <div class="flex flex-col items-center text-center bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100">
+              <div class="w-16 h-16 bg-gradient-to-r from-[#3d547f] to-[#5a6fa3] rounded-full flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 256 256">
+                  <path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.27,98.63a8,8,0,0,1-11.07,2.22A79.71,79.71,0,0,0,168,184a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.27,206.63Z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-[#333] text-lg font-bold mb-3">グループ管理</h3>
+                <p class="text-[#666] text-sm leading-relaxed">
+                  6桁の招待コードで簡単参加・メンバー管理・リアルタイムチャット機能
+                </p>
+              </div>
+            </div>
+
+            <div class="flex flex-col items-center text-center bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100">
+              <div class="w-16 h-16 bg-gradient-to-r from-[#10b981] to-[#059669] rounded-full flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 256 256">
+                  <path d="M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM32,64H224V88H32ZM32,192V104H224v88ZM128,136a8,8,0,0,1,8-8h48a8,8,0,0,1,0,16H136A8,8,0,0,1,128,136Zm0,24a8,8,0,0,1,8-8h48a8,8,0,0,1,0,16H136A8,8,0,0,1,128,160ZM64,136a12,12,0,1,1,12,12A12,12,0,0,1,64,136Zm0,24a12,12,0,1,1,12,12A12,12,0,0,1,64,160Z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-[#333] text-lg font-bold mb-3">支払い記録・割り勘計算</h3>
+                <p class="text-[#666] text-sm leading-relaxed">
+                  詳細な割り勘設定・自動精算計算・最小取引数での最適化
+                </p>
+              </div>
+            </div>
+
+            <div class="flex flex-col items-center text-center bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100">
+              <div class="w-16 h-16 bg-gradient-to-r from-[#f59e0b] to-[#d97706] rounded-full flex items-center justify-center mb-4">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 512 512" xml:space="preserve">
+                  <g>
+                    <polygon fill="white" points="336.156,239.469 280.922,239.469 274.984,248.688 274.984,270.797 336.156,270.797 336.156,270.875 336.156,297.703 336.156,302.188 274.984,302.188 274.984,349.563 237,349.563 237,302.188 175.844,302.188 175.844,297.703 175.844,270.875 175.844,270.797 237,270.797 237,248.719 231.063,239.469 175.844,239.469 175.844,212.656 213.813,212.656 181.531,162.422 213.719,162.422 255.984,228.188 298.266,162.422 330.453,162.422 298.203,212.656 336.156,212.656"/>
+                    <path fill="white" d="M256,64c105.875,0,192,86.125,192,192s-86.125,192-192,192c-105.859,0-192-86.125-192-192S150.141,64,256,64 M256,0C114.609,0,0,114.625,0,256c0,141.391,114.609,256,256,256c141.375,0,256-114.609,256-256C512,114.625,397.375,0,256,0z"/>
+                  </g>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-[#333] text-lg font-bold mb-3">送金機能</h3>
+                <p class="text-[#666] text-sm leading-relaxed">
+                  PayPay・銀行口座対応・送金ステータス管理・取引履歴
+                </p>
+              </div>
+            </div>
+
+            <div class="flex flex-col items-center text-center bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100">
+              <div class="w-16 h-16 bg-gradient-to-r from-[#8b5cf6] to-[#7c3aed] rounded-full flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 256 256">
+                  <path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208Z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-[#333] text-lg font-bold mb-3">認証・セキュリティ</h3>
+                <p class="text-[#666] text-sm leading-relaxed">
+                  メール認証・Apple ID連携・セキュアなデータ保護
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2
+          class="text-[#3d547f] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
+        >
+          アプリの画面
+        </h2>
+        <div class="px-4">
+          <p class="text-[#666] text-sm leading-normal mb-6">
+            実際の画面を見て、使いやすさをご確認ください
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- グループ管理画面 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div
+                class="bg-gradient-to-b from-gray-100 to-gray-200 p-4 flex items-center justify-center min-h-[400px]"
+              >
+                <div class="text-center">
+                  <div
+                    class="w-16 h-16 mx-auto bg-[#3d547f] rounded-full flex items-center justify-center mb-4"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      fill="white"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.27,98.63a8,8,0,0,1-11.07,2.22A79.71,79.71,0,0,0,168,184a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.27,206.63Z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 class="text-[#333] font-bold mb-2">グループ管理</h3>
+                  <p class="text-[#666] text-sm">
+                    友達や同僚を招待してグループを作成
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 支払い記録画面 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div
+                class="bg-gradient-to-b from-gray-100 to-gray-200 p-4 flex items-center justify-center min-h-[400px]"
+              >
+                <div class="text-center">
+                  <div
+                    class="w-16 h-16 mx-auto bg-[#3d547f] rounded-full flex items-center justify-center mb-4"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      fill="white"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm40-68a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,148Zm0-32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,116Z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 class="text-[#333] font-bold mb-2">支払い記録</h3>
+                  <p class="text-[#666] text-sm">
+                    簡単な入力で支払いを記録・管理
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 精算結果画面 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div
+                class="bg-gradient-to-b from-gray-100 to-gray-200 p-4 flex items-center justify-center min-h-[400px]"
+              >
+                <div class="text-center">
+                  <div
+                    class="w-16 h-16 mx-auto bg-[#3d547f] rounded-full flex items-center justify-center mb-4"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      fill="white"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM172.49,99.51a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L118,141l42.17-42.17A8,8,0,0,1,172.49,99.51Z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 class="text-[#333] font-bold mb-2">精算結果</h3>
+                  <p class="text-[#666] text-sm">
+                    誰がいくら払うべきか自動で計算
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 詳細機能セクション -->
+        <div class="p-4">
+          <h2
+            class="text-[#3d547f] text-[22px] font-bold leading-tight tracking-[-0.015em] px-2 pb-3 pt-5"
+          >
+            すべての機能を無料で
+          </h2>
+          <div class="bg-white shadow-md rounded-xl p-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="flex flex-col gap-4">
+                <div class="flex items-start gap-3">
+                  <div
+                    class="text-[#3d547f] bg-white border border-[#3d547f] p-2 rounded-full flex-shrink-0"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.27,98.63a8,8,0,0,1-11.07,2.22A79.71,79.71,0,0,0,168,184a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.27,206.63Z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-[#333] text-lg font-bold mb-2">
+                      グループ・イベント管理
+                    </h3>
+                    <p class="text-[#666] text-sm">
+                      ・6桁の招待コードで簡単参加<br />
+                      ・イベントごとの参加者選択<br />
+                      ・メンバーの参加・脱退管理<br />
+                      <br />
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div
+                    class="text-[#3d547f] bg-white border border-[#3d547f] p-2 rounded-full flex-shrink-0"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V88H40V56ZM40,200V104H216v96Z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-[#333] text-lg font-bold mb-2">
+                      送金・支払い機能
+                    </h3>
+                    <p class="text-[#666] text-sm">
+                      ・PayPayID・銀行口座情報登録<br />
+                      ・送金ステータス管理（未送金→送金済み→確認済み）<br />
+                      ・相手側での受取確認機能<br />
+                      ・詳細な取引履歴管理
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-4">
+                <div class="flex items-start gap-3">
+                  <div
+                    class="text-[#3d547f] bg-white border border-[#3d547f] p-2 rounded-full flex-shrink-0"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm37.66-101.66a8,8,0,0,1,0,11.32l-32,32a8,8,0,0,1-11.32,0l-32-32a8,8,0,0,1,11.32-11.32L120,132.69V88a8,8,0,0,1,16,0v44.69l18.34-18.35A8,8,0,0,1,165.66,114.34Z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-[#333] text-lg font-bold mb-2">
+                      高度な計算アルゴリズム
+                    </h3>
+                    <p class="text-[#666] text-sm">
+                      ・支払いごとに割り勘対象者を個別選択<br />
+                      ・最小取引数での効率的な精算計算<br />
+                      ・複雑な多人数精算も瞬時に自動計算<br />
+                      ・各参加者の収支を明確に表示
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div
+                    class="text-[#3d547f] bg-white border border-[#3d547f] p-2 rounded-full flex-shrink-0"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M213.66,66.34l-40-40A8,8,0,0,0,168,24H88A16,16,0,0,0,72,40V56H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H64v16a16,16,0,0,0,16,16h96a16,16,0,0,0,11.31-4.69l48-48A16,16,0,0,0,240,168V72A8,8,0,0,0,213.66,66.34ZM176,51.31,204.69,80H176ZM40,72H72v96H40Zm176,96H184a8,8,0,0,0-8,8v32H80V40h80V88a8,8,0,0,0,8,8h48v72Z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-[#333] text-lg font-bold mb-2">
+                      認証・セキュリティ
+                    </h3>
+                    <p class="text-[#666] text-sm">
+                      ・メールアドレス・Apple ID認証対応<br />
+                      ・プロフィール・アバター画像管理<br />
+                      ・セキュアなデータ保護とプライバシー<br />
+                      ・パスワード変更・アカウント削除機能
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="px-4 py-8">
+          <h2
+            class="text-[#3d547f] text-xl md:text-[22px] font-bold leading-tight tracking-[-0.015em] pb-6 text-center"
+          >
+            完全無料で利用可能
+          </h2>
+          <div class="flex justify-center">
+            <div
+              class="max-w-md w-full flex flex-col gap-6 rounded-xl border-2 border-solid border-[#3d547f] bg-white shadow-lg p-6 md:p-8"
+            >
+              <div class="text-center">
+                <h1 class="text-[#3d547f] text-xl md:text-2xl font-bold mb-4">われっと</h1>
+                <div class="mb-6">
+                  <span
+                    class="text-[#333] text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]"
+                    >無料</span
+                  >
+                  <p class="text-[#666] text-sm mt-2">無料でご利用いただけます</p>
+                </div>
+                <a
+                  href="https://apps.apple.com/us/app/%E3%82%8F%E3%82%8C%E3%81%A3%E3%81%A8/id6744440089"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full cursor-pointer rounded-full h-12 md:h-14 px-6 bg-gradient-to-r from-[#3d547f] to-[#5a6fa3] hover:from-[#2a3d63] hover:to-[#3d547f] text-white text-base md:text-lg font-bold leading-normal tracking-[0.015em] transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg shadow-md flex items-center justify-center"
+                >
+                  App Storeでダウンロード
+                </a>
+              </div>
+
+            <div class="border-t border-[#e0e0e0] pt-6">
+              <h3 class="text-[#333] text-lg font-bold mb-4 text-center">
+                すべての機能が無料
+              </h3>
+              <div class="space-y-3">
+                <div class="flex items-center gap-3">
+                  <div class="text-[#3d547f]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <span class="text-[#333] text-sm">グループ無制限作成</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="text-[#3d547f]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <span class="text-[#333] text-sm">詳細な割り勘設定</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="text-[#3d547f]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <span class="text-[#333] text-sm"
+                    >PayPay・銀行口座送金対応</span
+                  >
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="text-[#3d547f]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <span class="text-[#333] text-sm">取引フローの可視化</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="text-[#3d547f]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <span class="text-[#333] text-sm">自動精算計算</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="text-[#3d547f]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <span class="text-[#333] text-sm">広告なし</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4">
+          <h2
+            class="text-[#3d547f] text-[22px] font-bold leading-tight tracking-[-0.015em] px-2 pb-3 pt-5"
+          >
+            アプリの特徴
+          </h2>
+          <div class="bg-white shadow-md rounded-xl p-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="text-[#3d547f] bg-white border border-[#3d547f] p-3 rounded-full"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-36-80a8,8,0,0,1-8,8H100a8,8,0,0,1,0-16h56A8,8,0,0,1,164,136Zm0,32a8,8,0,0,1-8,8H100a8,8,0,0,1,0-16h56A8,8,0,0,1,164,168Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-[#333] text-lg font-bold">
+                    詳細な割り勘設定
+                  </h3>
+                </div>
+                <p class="text-[#666] pl-10">
+                  支払いごとに割り勘対象者を個別選択可能。特定の人だけで割り勘したい場合も簡単に設定できます。
+                </p>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="text-[#3d547f] bg-white border border-[#3d547f] p-3 rounded-full"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm37.66-101.66a8,8,0,0,1,0,11.32l-32,32a8,8,0,0,1-11.32,0l-32-32a8,8,0,0,1,11.32-11.32L120,132.69V88a8,8,0,0,1,16,0v44.69l18.34-18.35A8,8,0,0,1,165.66,114.34Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-[#333] text-lg font-bold">自動計算</h3>
+                </div>
+                <p class="text-[#666] pl-10">
+                  複雑な割り勘も自動で精算額を計算。最小の取引数で全員の収支をゼロにする方法を自動計算します。
+                </p>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="text-[#3d547f] bg-white border border-[#3d547f] p-3 rounded-full"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V88H40V56ZM40,200V104H216v96Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-[#333] text-lg font-bold">送金機能</h3>
+                </div>
+                <p class="text-[#666] pl-10">
+                  PayPayID、銀行口座情報の登録・管理。送金ステータスの管理と履歴確認ができます。
+                </p>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="text-[#3d547f] bg-white border border-[#3d547f] p-3 rounded-full"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M213.66,66.34l-40-40A8,8,0,0,0,168,24H88A16,16,0,0,0,72,40V56H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H64v16a16,16,0,0,0,16,16h96a16,16,0,0,0,11.31-4.69l48-48A16,16,0,0,0,240,168V72A8,8,0,0,0,213.66,66.34ZM176,51.31,204.69,80H176ZM40,72H72v96H40Zm176,96H184a8,8,0,0,0-8,8v32H80V40h80V88a8,8,0,0,0,8,8h48v72Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-[#333] text-lg font-bold">イベント管理</h3>
+                </div>
+                <p class="text-[#666] pl-10">
+                  グループ内で飲み会や旅行などのイベントを作成。イベントごとに参加するメンバーを柔軟に選択できます。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 利用シーンセクション -->
+        <div class="max-w-6xl mx-auto px-4 py-12">
+          <h2 class="text-[#3d547f] text-3xl font-bold mb-8 text-center">
+            利用シーン
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+              class="bg-white shadow-md rounded-xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out border border-gray-100 hover:border-[#3d547f]/20"
+            >
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-[#3d547f] to-[#5a6fa3] rounded-lg flex items-center justify-center mb-4 transition-transform hover:scale-110"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="white"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M224,128a96,96,0,0,1-94.71,96H128A95.38,95.38,0,0,1,62.1,197.8a8,8,0,0,1,11-11.63A80.06,80.06,0,0,0,128,208h1.29A80,80,0,0,0,208,128c0-2.63-.13-5.29-.38-7.93a8,8,0,1,1,15.86-2.14C223.83,121.29,224,124.63,224,128Z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-lg font-bold text-[#333] mb-2">友人との飲み会</h3>
+              <p class="text-[#666] text-sm">
+                複数のお店をハシゴしたり、個別に注文した料理の割り勘も簡単に計算できます。
+              </p>
+            </div>
+
+            <div
+              class="bg-white shadow-md rounded-xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out border border-gray-100 hover:border-[#3d547f]/20"
+            >
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-[#3d547f] to-[#5a6fa3] rounded-lg flex items-center justify-center mb-4 transition-transform hover:scale-110"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="white"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M156.66,101.66l-40,40a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,126.69l34.34-34.35a8,8,0,0,1,11.32,11.32ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-lg font-bold text-[#333] mb-2">グループ旅行</h3>
+              <p class="text-[#666] text-sm">
+                宿泊費、交通費、食事代など様々な費用を一元管理し、最終的な精算を自動化。
+              </p>
+            </div>
+
+            <div
+              class="bg-white shadow-md rounded-xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out border border-gray-100 hover:border-[#3d547f]/20"
+            >
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-[#3d547f] to-[#5a6fa3] rounded-lg flex items-center justify-center mb-4 transition-transform hover:scale-110"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="white"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.27,98.63a8,8,0,0,1-11.07,2.22A79.71,79.71,0,0,0,168,184a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.27,206.63Z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-lg font-bold text-[#333] mb-2">サークル・部活</h3>
+              <p class="text-[#666] text-sm">
+                会費、合宿費、部品代などの管理で、透明性の高い会計処理を実現。
+              </p>
+            </div>
+
+            <div
+              class="bg-white shadow-md rounded-xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out border border-gray-100 hover:border-[#3d547f]/20"
+            >
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-[#3d547f] to-[#5a6fa3] rounded-lg flex items-center justify-center mb-4 transition-transform hover:scale-110"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="white"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M240,208H224V96a16,16,0,0,0-16-16H184V48a16,16,0,0,0-16-16H88A16,16,0,0,0,72,48V80H48A16,16,0,0,0,32,96V208H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM88,48h80V208H88ZM48,96H72V208H48ZM184,96h24V208H184Z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-lg font-bold text-[#333] mb-2">シェアハウス</h3>
+              <p class="text-[#666] text-sm">
+                光熱費、食費、日用品などの共同出費を公平に分担し、月末の精算を効率化。
+              </p>
+            </div>
+
+            <div
+              class="bg-white shadow-md rounded-xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out border border-gray-100 hover:border-[#3d547f]/20"
+            >
+              <div
+                class="w-12 h-12 bg-[#3d547f] rounded-lg flex items-center justify-center mb-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="white"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM112,176a8,8,0,0,1-16,0V80a8,8,0,0,1,16,0Zm48,0a8,8,0,0,1-16,0V80a8,8,0,0,1,16,0Z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-lg font-bold text-[#333] mb-2">会社イベント</h3>
+              <p class="text-[#666] text-sm">
+                歓送迎会、忘年会などの会社イベントで、参加者ごとの支払い管理を簡素化。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 差別化ポイントセクション -->
+        <div class="bg-gradient-to-r from-[#f8fafc] to-[#f1f5f9] py-16">
+          <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-[#3d547f] text-3xl font-bold mb-12 text-center">
+              差別化ポイント
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div
+                class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out border border-gray-100 hover:border-[#3d547f]/20"
+              >
+                <div class="flex items-center mb-6">
+                  <div
+                    class="w-14 h-14 bg-gradient-to-r from-[#3d547f] to-[#8B9DC3] rounded-lg flex items-center justify-center mr-4 transition-transform hover:scale-110"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="28"
+                      height="28"
+                      fill="white"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29L15.38,141.85a16,16,0,0,1,0-25l43.5-36.29a8,8,0,0,1,10.24,12.29Zm176,27.7-43.5-36.29a8,8,0,1,0-10.24,12.29L227.5,128l-40.62,33.85a8,8,0,0,0,10.24,12.29l43.5-36.29A16,16,0,0,0,245.12,121.85ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#333]">プロセス完結型</h3>
+                </div>
+                <p class="text-[#666] leading-relaxed">
+                  支払い記録から精算確認までを一つのアプリで完結。
+                  外部ツールとの連携不要で、すべての工程をシームレスに管理できます。
+                </p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span
+                    class="bg-[#e0f2fe] text-[#01579b] text-xs px-3 py-1 rounded-full"
+                    >記録</span
+                  >
+                  <span
+                    class="bg-[#e0f2fe] text-[#01579b] text-xs px-3 py-1 rounded-full"
+                    >計算</span
+                  >
+                  <span
+                    class="bg-[#e0f2fe] text-[#01579b] text-xs px-3 py-1 rounded-full"
+                    >送金</span
+                  >
+                  <span
+                    class="bg-[#e0f2fe] text-[#01579b] text-xs px-3 py-1 rounded-full"
+                    >確認</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out border border-gray-100 hover:border-[#3d547f]/20"
+              >
+                <div class="flex items-center mb-6">
+                  <div
+                    class="w-14 h-14 bg-gradient-to-r from-[#3d547f] to-[#8B9DC3] rounded-lg flex items-center justify-center mr-4 transition-transform hover:scale-110"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="28"
+                      height="28"
+                      fill="white"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M176,232a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h80A8,8,0,0,1,176,232ZM224,80H208V64a32,32,0,0,0-32-32H80A32,32,0,0,0,48,64V80H32A16,16,0,0,0,16,96v32a88,88,0,0,0,80,87.64V240a8,8,0,0,0,16,0V216h32v24a8,8,0,0,0,16,0V215.64A88,88,0,0,0,240,128V96A16,16,0,0,0,224,80ZM80,48h96a16,16,0,0,1,16,16V80H64V64A16,16,0,0,1,80,48ZM32,128V96H48v64A71.68,71.68,0,0,1,32,128Zm192,0a71.68,71.68,0,0,1-16,32V96h16Z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#333]">階層構造管理</h3>
+                </div>
+                <p class="text-[#666] leading-relaxed">
+                  グループ・イベントの階層構造により柔軟な管理を実現。
+                  大規模なグループでも、イベントごとに参加者を細かく設定可能です。
+                </p>
+                <div class="mt-4">
+                  <div class="flex items-center text-sm text-[#666] mb-2">
+                    <div class="w-3 h-3 bg-[#3d547f] rounded-full mr-2"></div>
+                    グループ（継続的な関係）
+                  </div>
+                  <div class="flex items-center text-sm text-[#666] ml-5">
+                    <div class="w-3 h-3 bg-[#8B9DC3] rounded-full mr-2"></div>
+                    イベント（個別の活動）
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+          <div
+            class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around"
+          >
+            <a
+              class="text-[#666] text-base font-normal leading-normal min-w-40"
+              href="#"
+              >プライバシーポリシー</a
+            >
+            <a
+              class="text-[#666] text-base font-normal leading-normal min-w-40"
+              href="#"
+              >利用規約</a
+            >
+            <a
+              class="text-[#666] text-base font-normal leading-normal min-w-40"
+              href="#"
+              >お問い合わせ</a
+            >
+          </div>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="#">
+              <div
+                class="text-[#666]"
+                data-icon="TwitterLogo"
+                data-size="24px"
+                data-weight="regular"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24px"
+                  height="24px"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
+                  ></path>
+                </svg>
+              </div>
+            </a>
+            <a href="#">
+              <div
+                class="text-[#666]"
+                data-icon="FacebookLogo"
+                data-size="24px"
+                data-weight="regular"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24px"
+                  height="24px"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"
+                  ></path>
+                </svg>
+              </div>
+            </a>
+            <a href="#">
+              <div
+                class="text-[#666]"
+                data-icon="InstagramLogo"
+                data-size="24px"
+                data-weight="regular"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24px"
+                  height="24px"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
+                  ></path>
+                </svg>
+              </div>
+            </a>
+          </div>
+          <p class="text-[#666] text-base font-normal leading-normal">
+            © 2025 われっと. All rights reserved.
+          </p>
+        </footer>
+      </div>
+      <div><div class="h-5 bg-white"></div></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,692 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700"
+    />
+
+    <title>技術スタック - われっと</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0iIzNkNTQ3ZiIvPgo8dGV4dCB4PSIxNiIgeT0iMjAiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWkiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7jgY88L3RleHQ+Cjwvc3ZnPgo="
+    />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-white justify-between group/design-root overflow-x-hidden"
+      style="
+        font-family: &quot;Spline Sans&quot;, &quot;Noto Sans&quot;, sans-serif;
+      "
+    >
+      <div>
+        <!-- Header -->
+        <div class="flex items-center bg-[#3d547f] p-4 pb-2 justify-between">
+          <h2
+            class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-left"
+          >
+            われっと
+          </h2>
+          <nav class="flex items-center gap-6">
+            <a
+              href="index.html"
+              class="text-white text-sm font-medium hover:text-[#8B9DC3] transition-colors"
+            >
+              ホーム
+            </a>
+            <a
+              href="tech-stack.html"
+              class="text-[#8B9DC3] text-sm font-medium underline"
+            >
+              技術スタック
+            </a>
+            <a
+              href="https://apps.apple.com/us/app/%E3%82%8F%E3%82%8C%E3%81%A3%E3%81%A8/id6744440089"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-white text-base font-bold leading-normal tracking-[0.015em] bg-[#8B9DC3] px-4 py-2 rounded-lg hover:bg-[#7a8bb5] transition-colors"
+            >
+              ダウンロード
+            </a>
+          </nav>
+        </div>
+
+        <!-- Hero Section -->
+        <div
+          class="bg-gradient-to-r from-[#3d547f] to-[#8B9DC3] text-white py-12"
+        >
+          <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl font-black mb-4">技術スタック</h1>
+            <p class="text-lg">
+              「われっと」の開発に使用された技術とアーキテクチャの詳細
+            </p>
+          </div>
+        </div>
+
+        <!-- 今後の開発計画 -->
+        <div class="max-w-6xl mx-auto px-4 py-12">
+          <h2 class="text-[#3d547f] text-3xl font-bold mb-8">今後の開発計画</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div
+              class="bg-white shadow-md rounded-xl p-6 border-l-4 border-[#3d547f] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out"
+            >
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-10 h-10 bg-[#f59e0b] rounded-lg flex items-center justify-center mr-3 transition-transform hover:scale-110"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="white"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm-4,48a12,12,0,1,1-12,12A12,12,0,0,1,124,72Zm12,112a16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40a8,8,0,0,1,0,16Z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-lg font-bold">多通貨対応</h3>
+              </div>
+              <p class="text-[#666] text-sm mb-3">
+                海外旅行での異なる通貨の管理機能を追加予定。リアルタイム為替レート取得とマルチカレンシー計算に対応。
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-[#fef3c7] text-[#92400e] text-xs px-2 py-1 rounded"
+                  >為替API連携</span
+                >
+                <span
+                  class="bg-[#fef3c7] text-[#92400e] text-xs px-2 py-1 rounded"
+                  >多通貨計算</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="bg-white shadow-md rounded-xl p-6 border-l-4 border-[#8B9DC3] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out"
+            >
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-10 h-10 bg-[#10b981] rounded-lg flex items-center justify-center mr-3 transition-transform hover:scale-110"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="white"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      d="M208,56H180.28L166.65,35.56A8,8,0,0,0,160,32H96a8,8,0,0,0-6.65,3.56L75.71,56H48A24,24,0,0,0,24,80V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V80A24,24,0,0,0,208,56Z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-lg font-bold">OCRレシート読取</h3>
+              </div>
+              <p class="text-[#666] text-sm mb-3">
+                カメラでレシートを撮影して自動入力する機能。OCR技術による文字認識とAIによる項目分析を実装予定。
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-[#d1fae5] text-[#065f46] text-xs px-2 py-1 rounded"
+                  >OCR技術</span
+                >
+                <span
+                  class="bg-[#d1fae5] text-[#065f46] text-xs px-2 py-1 rounded"
+                  >AI画像解析</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="bg-white shadow-md rounded-xl p-6 border-l-4 border-[#f59e0b] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out"
+            >
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-10 h-10 bg-[#3b82f6] rounded-lg flex items-center justify-center mr-3 transition-transform hover:scale-110"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="white"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208A16,16,0,0,0,221.8,175.94Z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-lg font-bold">通知システム</h3>
+              </div>
+              <p class="text-[#666] text-sm mb-3">
+                プッシュ通知による支払いリマインダー機能。未精算の通知やイベント開始前の確認通知を実装予定。
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-[#dbeafe] text-[#1e40af] text-xs px-2 py-1 rounded"
+                  >Push通知</span
+                >
+                <span
+                  class="bg-[#dbeafe] text-[#1e40af] text-xs px-2 py-1 rounded"
+                  >スケジューラー</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="bg-white shadow-md rounded-xl p-6 border-l-4 border-[#ef4444]"
+            >
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-10 h-10 bg-[#8b5cf6] rounded-lg flex items-center justify-center mr-3"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="white"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128ZM40,76H216a12,12,0,0,0,0-24H40a12,12,0,0,0,0,24ZM216,180H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-lg font-bold">レポート機能</h3>
+              </div>
+              <p class="text-[#666] text-sm mb-3">
+                月次/年次の支出分析とレポート生成機能。データ可視化とトレンド分析によるインサイト提供を予定。
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-[#ede9fe] text-[#6b21a8] text-xs px-2 py-1 rounded"
+                  >データ分析</span
+                >
+                <span
+                  class="bg-[#ede9fe] text-[#6b21a8] text-xs px-2 py-1 rounded"
+                  >可視化</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 技術実装計画 -->
+          <div
+            class="bg-gradient-to-r from-[#3d547f] to-[#8B9DC3] text-white rounded-xl p-8"
+          >
+            <h3 class="text-2xl font-bold mb-6 text-center">技術実装計画</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3"
+                >
+                  <span class="text-2xl font-bold">1</span>
+                </div>
+                <h4 class="font-bold mb-2">多通貨対応</h4>
+                <p class="text-sm opacity-90">外部為替APIとの統合</p>
+              </div>
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3"
+                >
+                  <span class="text-2xl font-bold">2</span>
+                </div>
+                <h4 class="font-bold mb-2">OCR機能</h4>
+                <p class="text-sm opacity-90">ML Kitによる画像解析</p>
+              </div>
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3"
+                >
+                  <span class="text-2xl font-bold">3</span>
+                </div>
+                <h4 class="font-bold mb-2">プッシュ通知</h4>
+                <p class="text-sm opacity-90">Firebase Cloud Messaging</p>
+              </div>
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3"
+                >
+                  <span class="text-2xl font-bold">4</span>
+                </div>
+                <h4 class="font-bold mb-2">分析・レポート</h4>
+                <p class="text-sm opacity-90">Chart.jsによるデータ可視化</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Architecture Overview -->
+        <div class="max-w-6xl mx-auto px-4 py-12">
+          <h2 class="text-[#3d547f] text-3xl font-bold mb-8 text-center">
+            アーキテクチャ概要
+          </h2>
+          <div
+            class="bg-white shadow-lg rounded-xl p-8 mb-12 hover:shadow-xl transition-shadow duration-300"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 mx-auto bg-[#3d547f] rounded-full flex items-center justify-center mb-4"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    fill="white"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-[#333] mb-2">
+                  モバイルアプリ
+                </h3>
+                <p class="text-[#666]">React Native + Expo</p>
+              </div>
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 mx-auto bg-[#3d547f] rounded-full flex items-center justify-center mb-4"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    fill="white"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM112,176a8,8,0,0,1-16,0V80a8,8,0,0,1,16,0Zm48,0a8,8,0,0,1-16,0V80a8,8,0,0,1,16,0Z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-[#333] mb-2">バックエンド</h3>
+                <p class="text-[#666]">Supabase (BaaS)</p>
+              </div>
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 mx-auto bg-[#3d547f] rounded-full flex items-center justify-center mb-4"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    fill="white"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      d="M224,128a96,96,0,0,1-94.71,96H128A95.38,95.38,0,0,1,62.1,197.8a8,8,0,0,1,11-11.63A80.06,80.06,0,0,0,128,208h1.29A80,80,0,0,0,208,128c0-2.63-.13-5.29-.38-7.93a8,8,0,1,1,15.86-2.14C223.83,121.29,224,124.63,224,128Z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-[#333] mb-2">データベース</h3>
+                <p class="text-[#666]">PostgreSQL</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frontend Technologies -->
+          <div class="mb-12">
+            <h2 class="text-[#3d547f] text-3xl font-bold mb-8">
+              フロントエンド技術
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div
+                class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out border border-gray-100"
+              >
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-10 h-10 bg-[#61dafb] rounded-lg flex items-center justify-center mr-3 transition-transform hover:scale-110"
+                  >
+                    <span class="text-white font-bold">RN</span>
+                  </div>
+                  <h3 class="text-lg font-bold">React Native</h3>
+                </div>
+                <p class="text-[#666] text-sm mb-3">
+                  クロスプラットフォーム対応のモバイルアプリフレームワーク。
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-[#f0f9ff] text-[#0284c7] text-xs px-2 py-1 rounded"
+                    >Cross-platform</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out border border-gray-100"
+              >
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-10 h-10 bg-[#000020] rounded-lg flex items-center justify-center mr-3 transition-transform hover:scale-110"
+                  >
+                    <span class="text-white font-bold text-xs">EXP</span>
+                  </div>
+                  <h3 class="text-lg font-bold">Expo</h3>
+                </div>
+                <p class="text-[#666] text-sm mb-3">
+                  React Nativeアプリの開発・ビルド・デプロイを効率化。
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-[#f0f9ff] text-[#0284c7] text-xs px-2 py-1 rounded"
+                    >Managed Workflow</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out border border-gray-100"
+              >
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-10 h-10 bg-[#f7df1e] rounded-lg flex items-center justify-center mr-3 transition-transform hover:scale-110"
+                  >
+                    <span class="text-black font-bold">JS</span>
+                  </div>
+                  <h3 class="text-lg font-bold">JavaScript</h3>
+                </div>
+                <p class="text-[#666] text-sm mb-3">
+                  動的プログラミング言語として採用。
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-[#f0f9ff] text-[#0284c7] text-xs px-2 py-1 rounded"
+                    >Dynamic Language</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend Technologies -->
+          <div class="mb-12">
+            <h2 class="text-[#3d547f] text-3xl font-bold mb-8">
+              バックエンド技術
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="bg-white shadow-md rounded-xl p-6">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 bg-[#3ecf8e] rounded-lg flex items-center justify-center mr-3"
+                  >
+                    <span class="text-white font-bold">SB</span>
+                  </div>
+                  <h3 class="text-xl font-bold">Supabase</h3>
+                </div>
+                <p class="text-[#666] text-sm mb-4">
+                  オープンソースのBackend-as-a-Service
+                  (BaaS)。PostgreSQL、認証、ストレージを統合的に提供。
+                </p>
+              </div>
+
+              <div class="bg-white shadow-md rounded-xl p-6">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 bg-[#336791] rounded-lg flex items-center justify-center mr-3"
+                  >
+                    <span class="text-white font-bold">PG</span>
+                  </div>
+                  <h3 class="text-xl font-bold">PostgreSQL</h3>
+                </div>
+                <p class="text-[#666] text-sm mb-4">
+                  高性能なオープンソースリレーショナルデータベース。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Authentication & Security -->
+          <div class="mb-12">
+            <h2 class="text-[#3d547f] text-3xl font-bold mb-8">
+              認証・セキュリティ
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="bg-white shadow-md rounded-xl p-6">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-10 h-10 bg-[#3ecf8e] rounded-lg flex items-center justify-center mr-3"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="white"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96Zm112,152H48V96H208Z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 class="text-lg font-bold">Supabase Auth</h3>
+                </div>
+                <p class="text-[#666] text-sm">メール認証とApple認証に対応。</p>
+              </div>
+
+              <div class="bg-white shadow-md rounded-xl p-6">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-10 h-10 bg-[#000] rounded-lg flex items-center justify-center mr-3"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="20"
+                      fill="white"
+                      viewBox="0 0 384 512"
+                    >
+                      <path
+                        d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 class="text-lg font-bold">Apple Auth</h3>
+                </div>
+                <p class="text-[#666] text-sm">
+                  Apple IDによるシームレスなログイン。
+                </p>
+              </div>
+
+              <div class="bg-white shadow-md rounded-xl p-6">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-10 h-10 bg-[#f59e0b] rounded-lg flex items-center justify-center mr-3"
+                  >
+                    <span class="text-white font-bold text-xs">JWT</span>
+                  </div>
+                  <h3 class="text-lg font-bold">JWT Tokens</h3>
+                </div>
+                <p class="text-[#666] text-sm">安全なセッション管理。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Algorithm & Business Logic -->
+          <div class="mb-12">
+            <h2 class="text-[#3d547f] text-3xl font-bold mb-8">コア機能</h2>
+            <div class="bg-white shadow-lg rounded-xl p-8">
+              <div class="mb-6">
+                <h3 class="text-xl font-bold text-[#333] mb-4">
+                  割り勘計算アルゴリズム
+                </h3>
+                <p class="text-[#666] mb-4">
+                  複雑な支払い状況を最も効率的な精算方法に変換する独自アルゴリズム。
+                  最小の取引数で全員の収支をゼロにする最適解を自動計算。
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div class="bg-gray-50 rounded-lg p-4">
+                    <h4 class="font-semibold text-[#333] mb-2">
+                      最小取引数アルゴリズム
+                    </h4>
+                    <p class="text-sm text-[#666]">
+                      各参加者の収支を計算し、最小回数の送金で精算完了
+                    </p>
+                  </div>
+                  <div class="bg-gray-50 rounded-lg p-4">
+                    <h4 class="font-semibold text-[#333] mb-2">
+                      リアルタイム計算
+                    </h4>
+                    <p class="text-sm text-[#666]">
+                      支払い記録時に即座に計算し、瞬時に結果表示
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Development & Deployment -->
+          <div class="mb-12">
+            <h2 class="text-[#3d547f] text-3xl font-bold mb-8">
+              開発・デプロイメント
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="bg-white shadow-md rounded-xl p-6">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-10 h-10 bg-[#000020] rounded-lg flex items-center justify-center mr-3"
+                  >
+                    <span class="text-white font-bold text-xs">EAS</span>
+                  </div>
+                  <h3 class="text-lg font-bold">Expo EAS</h3>
+                </div>
+                <p class="text-[#666] text-sm">
+                  クラウドベースのビルド・デプロイサービス。
+                </p>
+              </div>
+
+              <div class="bg-white shadow-md rounded-xl p-6">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-10 h-10 bg-[#181717] rounded-lg flex items-center justify-center mr-3"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="white"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M119.83,56A52,52,0,0,0,76,32a51.92,51.92,0,0,0-3.49.19,44,44,0,0,0-67.3,50.48,36,36,0,0,0,11.43,61.64c2.36,1.29,4.85,2.44,7.46,3.44a42,42,0,0,1,16.79-26.17A36,36,0,0,1,70,116c4.67,0,8.57.68,12,2a36,36,0,0,1,63,34,41.84,41.84,0,0,1-32,17.73c.19,1.43.31,2.87.31,4.37a52,52,0,0,0,19.83,40.65,44,44,0,0,0,43.31,11.94,36,36,0,0,0,51.62-30,36,36,0,0,0-30-51.62A44,44,0,0,0,188,128c-2.36-1.29-4.85-2.44-7.46-3.44a42,42,0,0,1-16.79,26.17A36,36,0,0,1,134,156c-4.67,0-8.57-.68-12-2a36,36,0,0,1-63-34,41.84,41.84,0,0,1,32-17.73c-.19-1.43-.31-2.87-.31-4.37A52,52,0,0,1,119.83,56Z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 class="text-lg font-bold">Git/GitHub</h3>
+                </div>
+                <p class="text-[#666] text-sm">
+                  バージョン管理とCI/CDパイプライン。
+                </p>
+              </div>
+
+              <div class="bg-white shadow-md rounded-xl p-6">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-10 h-10 bg-[#f7df1e] rounded-lg flex items-center justify-center mr-3"
+                  >
+                    <span class="text-black font-bold text-xs">JS</span>
+                  </div>
+                  <h3 class="text-lg font-bold">JavaScript</h3>
+                </div>
+                <p class="text-[#666] text-sm">
+                  動的プログラミング言語として採用。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Portfolio Highlights -->
+          <div class="mb-12">
+            <h2 class="text-[#3d547f] text-3xl font-bold mb-8">技術的特徴</h2>
+            <div
+              class="bg-gradient-to-r from-[#3d547f] to-[#8B9DC3] text-white rounded-xl p-8"
+            >
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div>
+                  <h3 class="text-lg font-bold mb-2">フルスタック開発</h3>
+                  <p class="text-sm opacity-90">
+                    モバイルフロントエンドからバックエンドまで一貫した設計・実装
+                  </p>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold mb-2">モダンな技術選定</h3>
+                  <p class="text-sm opacity-90">
+                    React Native、Supabase等の最新技術を採用
+                  </p>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold mb-2">セキュリティ重視</h3>
+                  <p class="text-sm opacity-90">
+                    Row Level SecurityやJWT認証でデータ保護を徹底
+                  </p>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold mb-2">アルゴリズム設計</h3>
+                  <p class="text-sm opacity-90">
+                    効率的な割り勘計算アルゴリズムの独自実装
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-[#f8fafc] p-8 mt-16">
+          <div class="max-w-6xl mx-auto text-center">
+            <div class="flex justify-center gap-6 mb-4">
+              <a
+                href="#"
+                class="text-[#666] hover:text-[#3d547f] transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="text-[#666] hover:text-[#3d547f] transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Z"
+                  />
+                </svg>
+              </a>
+            </div>
+            <p class="text-[#666] text-base">
+              © 2025 われっと. All rights reserved.
+            </p>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
